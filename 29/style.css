@@ -1,0 +1,6 @@
+body {
+    background-color: #000;
+
+    /* Make sure newlines in strings render correctly in HTML. */
+    white-space: pre-line;
+}
