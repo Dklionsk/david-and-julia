@@ -20,7 +20,7 @@ function checkAnswer(answerHashes) {
 
     var feedbackStr = "";
     if (isCorrect) {
-        feedbackStr = "That is correct!";
+        feedbackStr = "Correct!<br><br>P.S. Let us know how this one went ❤️";
     } else {
         feedbackStr = "Try again";
     }
@@ -30,7 +30,7 @@ function checkAnswer(answerHashes) {
 var hintIndex = 0;
 
 function giveHint(hints) {
-    document.getElementById("feedback").innerHTML += "<br>" + hints[hintIndex++];
+    document.getElementById("feedback").innerHTML += hints[hintIndex++] + "<br>";
     if (hintIndex >= hints.length) {
         document.getElementById("hint").disabled = true;
     }

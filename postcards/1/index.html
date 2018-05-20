@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>postcards</title>
+    <script type="text/javascript" src="../postcards.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript">
+        function submitClicked() {
+            checkAnswer([95358580, 101485913]);
+        }
+        function hintClicked() {
+            giveHint(['hint1', 'hint2', 'hint3']);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="../stamp.jpg" width="80">
+    </div>
+    <div>
+        Answer: <input type="text" id="answer">
+        <button onclick="submitClicked()">Submit</button>
+        <button onclick="hintClicked()" id="hint">Give me a hint</button>
+    </div>
+    <div id="feedback"></div>
+</body>
+</html>
