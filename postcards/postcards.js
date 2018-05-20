@@ -24,3 +24,18 @@ function check_answer(user_input, valid_answer_hashes)
     console.log("Hello " + inputStr + " hash: " + inputHash);
     return valid_answer_hashes.includes(inputHash);
 }
+
+function myFunction(valid_answer_hashes) {
+    var answerElem =  document.getElementById("answer");
+    var isCorrect = check_answer(answerElem.value, valid_answer_hashes);
+    var feedbackStr = "";
+    if (isCorrect)
+    {
+        feedbackStr = "That is correct!";
+    }
+    else
+    {
+        feedbackStr = "Try again";
+    }
+    document.getElementById("feedback_answer").innerHTML = feedbackStr;
+}
