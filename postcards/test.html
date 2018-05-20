@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="postcards.js"></script>
+    <title>postcards</title>
+</head>
+<body>
+<!-- <form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+ -->
+    Answer: <input type="text" id="answer">
+    <!-- <input type="submit" name="submit" value="submit"> -->
+    <button onclick="myFunction()">Try it</button>
+    <script type="text/javascript">
+        
+        function myFunction() {
+            var answerElem =  document.getElementById("answer");
+            // Remove anything that's not alphabetic
+            var answerStr = answerElem.value.toLowerCase().replace(/[^a-z]/gi, '');
+            console.log("Hello " + answerStr + " hash: " + easy_hash(answerStr));
+        }
+    </script>
+</body>
+</html>
