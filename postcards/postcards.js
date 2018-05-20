@@ -11,3 +11,16 @@ function easy_hash(input) {
   }
   return hash;
 }
+
+// checks user input string against list of valid answers
+// and returns true if answer matches, false otherwise
+// this function will canonicalize the input into a standard form
+// user_input: string
+// valid_answer_hashes: array<int>
+function check_answer(user_input, valid_answer_hashes)
+{
+    var inputStr = user_input.toLowerCase().replace(/[^a-z]/gi, '');
+    var inputHash = easy_hash(inputStr);
+    console.log("Hello " + inputStr + " hash: " + inputHash);
+    return valid_answer_hashes.includes(inputHash);
+}

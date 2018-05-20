@@ -14,13 +14,22 @@
     Answer: <input type="text" id="answer">
     <!-- <input type="submit" name="submit" value="submit"> -->
     <button onclick="myFunction()">Try it</button>
+    <div id="feedback_answer"></div>
     <script type="text/javascript">
         
         function myFunction() {
             var answerElem =  document.getElementById("answer");
-            // Remove anything that's not alphabetic
-            var answerStr = answerElem.value.toLowerCase().replace(/[^a-z]/gi, '');
-            console.log("Hello " + answerStr + " hash: " + easy_hash(answerStr));
+            var isCorrect = check_answer(answerElem.value, [95358580, 101485913]);
+            var feedbackStr = "";
+            if (isCorrect)
+            {
+                feedbackStr = "That is correct!";
+            }
+            else
+            {
+                feedbackStr = "Try again";
+            }
+            document.getElementById("feedback_answer").innerHTML = feedbackStr;
         }
     </script>
 </body>
