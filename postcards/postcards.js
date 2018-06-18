@@ -17,7 +17,7 @@ var hintIndex = 0;
 var wrongAnswerIndex = 0;
 let wrongAnswerFeedbacks = ["That's not it", "That's not it, keep trying!", "That's not it, keep trying! We believe in you!", "That's not it, keep trying! We really believe in you!"];
 
-function checkAnswer(answerHashes) {
+function checkAnswer(answerHashes, showMessage) {
     var userInput =  document.getElementById("answer").value;
     var inputStr = userInput.toLowerCase().replace(/[^a-z]/gi, '');
     var inputHash = easyHash(inputStr);
@@ -25,7 +25,13 @@ function checkAnswer(answerHashes) {
 
     var feedbackStr = "";
     if (isCorrect) {
-        feedbackStr = "Correct!<br><br>P.S. Let us know how this one went ❤️";
+        feedbackStr = "";
+        if (showMessage) {
+            feedbackStr += "Congratulations! You solved the first puzzle!<br><br>What's going on here? We just wanted to reach out to some of our friends and family in an interesting and tactile way.<br>No big announcements or anything, just some fun puzzles and postcards from us.<br>We hope you enjoy it, and let us know how this one went ❤️";
+        } else {
+            feedbackStr += "Correct!<br><br>P.S. Let us know how this one went ❤️";
+        }
+        feedbackStr += "<br><br>davidklionsky@gmail.com<br>julenka.schwarz@gmail.com";
         document.getElementById("hints").innerHTML = "";
     } else {
         feedbackStr = wrongAnswerFeedbacks[wrongAnswerIndex];
